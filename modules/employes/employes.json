@@ -1,0 +1,42 @@
+{
+"title": "Liste des employés",
+"orientation": "portrait",
+"marginwidth": "50",
+"marginheight": "50",
+"lineheight": "25",
+"sql" : "SELECT IFNull(no_employe,'') as no_employe,IFNull(prenom_employe,'') as prenom_employe,IFNull(nom_employe,'') as nom_employe,IFNull(DATE_FORMAT(date_ancien,'%Y-%m-%d'),'') as date_ancien from employes",
+"col":[
+	{ "sql": "no_employe",  "label": "No.Emp" },
+	{ "sql": "prenom_employe", "label": "Prénom" },
+	{ "sql": "nom_employe",  "label": "Nom" },
+	{ "sql": "date_ancien",  "label": "Date" }								
+  ],
+"params":[
+	{ "nom_param": "no_employe",
+	  "desc_param": "Employé", 
+	  "data_source" : "employes",
+	  "champs" : "no_employe AS id,CONCAT(nom_employe,' ',prenom_employe) as value",
+          "type_obj" : "select",
+	  "widget" : "",
+	  "tri" : "value",
+          "sens" : "ASC",
+          "requis" : 0,
+	  "multiple" : 0	
+	  }								
+  ],
+"groupby":[
+	{ "desc_groupby": "no_employe",  "nom_groupby": "Par numéro d'employé" },								
+  ],
+"options":[
+	{ "nom_param": "unit",
+	  "desc_param": "Unité",
+          "data_source": 'v_unit',
+          "champs" : "id_unit as id,desc_unit as value",
+          "type_obj" : "select",
+          "tri" : "value",
+	  "sens" : "ASC",
+          "default_id" : 1,
+	  "ValueAll" : 0
+	}								
+  ]			
+}
