@@ -4,7 +4,7 @@
 "marginwidth": "50",
 "marginheight": "50",
 "lineheight": "25",
-"sql" : "SELECT IFNull(no_employe,'') as no_employe,IFNull(prenom_employe,'') as prenom_employe,IFNull(nom_employe,'') as nom_employe,IFNull(DATE_FORMAT(date_ancien,'%Y-%m-%d'),'') as date_ancien from employes",
+"sql" : "SELECT no_employe as no_employe,prenom_employe as prenom_employe,nom_employe as nom_employe,DATE_FORMAT(date_ancien,'%Y-%m-%d') as date_ancien from employes",
 "col":[
 	{ "sql": "no_employe",  "label": "No.Emp" },
 	{ "sql": "prenom_employe", "label": "Prénom" },
