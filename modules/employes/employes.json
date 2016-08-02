@@ -30,7 +30,7 @@
 "options":[
 	{ "nom_param": "unit",
 	  "desc_param": "Unité",
-          "data_source": 'v_unit',
+          "data_source": "v_unit",
           "champs" : "id_unit as id,desc_unit as value",
           "type_obj" : "select",
           "tri" : "value",
